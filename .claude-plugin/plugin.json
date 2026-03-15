@@ -1,0 +1,12 @@
+{
+  "name": "seo-strategy",
+  "version": "0.1.0",
+  "description": "Generate positioning-led, stage-gated SEO content strategies for startups using a three-layer methodology",
+  "author": {
+    "name": "And/or Labs",
+    "url": "https://andorlabs.ca"
+  },
+  "repository": "https://github.com/andorlabs/seo-strategy",
+  "license": "MIT",
+  "keywords": ["seo", "content-strategy", "startup", "marketing"]
+}
