@@ -1,3 +1,16 @@
+---
+name: search-gap
+description: >
+  This skill should be used when the user asks to audit website SEO,
+  run an SEO audit, check SEO health, grade a website for search,
+  analyze on-page SEO, find SEO issues, check E-E-A-T signals,
+  review technical SEO, or mentions "21-check SEO audit", "SEO scorecard",
+  "search gap analysis", "on-page SEO review", "E-E-A-T audit",
+  "content depth analysis", "how does my site score for SEO",
+  "what SEO problems does my site have".
+version: 0.1.0
+---
+
 # Search Gap Analysis
 
 A search discoverability and competitive gap analysis tool that audits a website's on-page SEO health, E-E-A-T trust signals, and content depth against 21 checks drawn from Google's official documentation, industry-standard SEO research, and content marketing studies. Then identifies semantic competitors from live SERP data and recommends content pillars scored on relevance, difficulty, and volume.
@@ -29,25 +42,7 @@ Content depth per page, topic coverage breadth, FAQ & educational content, visua
 
 ## Scoring
 
-Each section receives a letter grade (A+ through F) based on the percentage of applicable items that pass:
-
-| Grade | Pass Rate |
-|-------|-----------|
-| A+    | 100%      |
-| A     | 90-99%    |
-| A-    | 85-89%    |
-| B+    | 80-84%    |
-| B     | 75-79%    |
-| B-    | 70-74%    |
-| C+    | 65-69%    |
-| C     | 60-64%    |
-| C-    | 55-59%    |
-| D+    | 50-54%    |
-| D     | 45-49%    |
-| D-    | 40-44%    |
-| F     | Below 40% |
-
-Items marked N/A are excluded from the denominator.
+Each section receives a letter grade (A+ through F) based on the percentage of applicable items that pass. N/A items are excluded from the denominator. See `reference/shared-procedures.md` for the full grading scale, scoring rules, and crawl/screenshot procedure.
 
 ## Output Format
 

@@ -1,3 +1,9 @@
+---
+description: Run the full SEO audit, competitive landscape analysis, and content strategy, then write a comprehensive markdown report to file
+argument-hint: <website-url>
+allowed-tools: Read, Write, Bash, Agent, WebFetch, WebSearch
+---
+
 # Command: export
 
 Run the 21-check SEO audit, competitive landscape analysis, and three-layer content strategy, then produce a comprehensive markdown report.
@@ -9,14 +15,14 @@ Run the 21-check SEO audit, competitive landscape analysis, and three-layer cont
 
 ## What It Does
 
-1. **Run the full audit internally** — follow all steps from the `audit` command (crawl all pages, read all 3 search-gap reference files, score all 21 checks)
+1. **Follow the crawl & screenshot procedure** in `skills/search-gap/reference/shared-procedures.md` — this includes crawling all pages and scoring all 21 checks
 2. **Run competitive landscape analysis** — extract 5 core topics, WebSearch each, identify top 3 SERP competitors, analyze their content
 3. **Run the full content strategy** — follow all steps from the `plan` command (three-layer framework, pillar architecture, content briefs)
 4. **Write the comprehensive combined analysis** to a single markdown file in the current directory
 
 ## Output
 
-Write a markdown file to the current working directory named `[company-name-lowercase]-seo-export.md`.
+Write a markdown file to the current working directory named `[company]-seo-export.md` (see shared-procedures.md for company name extraction).
 
 The file must follow this EXACT structure:
 
@@ -54,21 +60,13 @@ The file must follow this EXACT structure:
 
 **Compliance:** PASS | FAIL | N/A
 
-**Observation:** [What you observed across the crawled pages — be specific. Name specific pages, cite evidence.]
+**Observation:** [What you observed across the crawled pages — be specific.]
 
 **How to fix:** [Only if FAIL. Specific, actionable recommendation.]
 
 ---
 
-[...repeat for every TS check...]
-
-## 2. E-E-A-T Signals ([X/Y] — [Grade])
-
-[...every EA check...]
-
-## 3. Content Depth ([X/Y] — [Grade])
-
-[...every CD check...]
+[...repeat for every check in all 3 sections...]
 
 ---
 
@@ -84,11 +82,8 @@ The file must follow this EXACT structure:
 ## Competitor 1: [Domain]
 
 **SERP Presence:** Appeared in [X]/5 topic searches
-
-**Content Advantage:** [What they do better — reference actual pages.]
-
-**Content Gap:** [What they're missing — the target site's opportunity.]
-
+**Content Advantage:** [What they do better.]
+**Content Gap:** [What they're missing.]
 **E-E-A-T Comparison:** [How their trust signals compare.]
 
 ---
@@ -116,8 +111,6 @@ The file must follow this EXACT structure:
 
 ## After Writing the File
 
-After writing the `.md` file, output a brief terminal summary:
-
 ```
 EXPORT COMPLETE: [Company Name]
 File: [filename]-seo-export.md
@@ -138,11 +131,3 @@ File: [filename]-seo-export.md
 
 Open [filename]-seo-export.md for the full report.
 ```
-
-## Notes
-
-- **IMPORTANT: Do NOT use the browser MCP for screenshots.** Always use local headless Chrome via the Bash tool instead.
-- This is the most comprehensive seo-grader output — combines all three capabilities
-- For a quick scorecard, use `/seo-grader:audit`
-- For content strategy only, use `/seo-grader:plan`
-- If Chrome is not installed, proceed with text-only analysis
