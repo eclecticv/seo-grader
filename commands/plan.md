@@ -8,7 +8,7 @@ Generate a comprehensive SEO content strategy for the website at $ARGUMENTS usin
 
 ## Setup
 
-1. Read settings from `.claude/seo-strategy.local.md` in the current project directory (if it exists). Extract:
+1. Read settings from `.claude/seo-grader.local.md` in the current project directory (if it exists). Extract:
    - `dataforseo_login` and `dataforseo_password` — if both are non-empty, operate in **enhanced mode** (use DataForSEO API). Otherwise, operate in **free mode** (SERP heuristics only).
    - `country` (default: US), `language` (default: en)
    - `industry`, `audience` — optional context to improve research
@@ -53,5 +53,7 @@ After the strategy-synthesizer completes:
 
 1. Display the brief summary it returned (stage, pillar count, post count, top priorities, key insight)
 2. Tell the user where the full report was saved: `./seo-strategy-report.md`
-3. If in free mode, mention they can get more precise metrics by configuring DataForSEO credentials in `.claude/seo-strategy.local.md`
+3. If in free mode, mention they can get more precise metrics by configuring DataForSEO credentials in `.claude/seo-grader.local.md`
 4. Offer to dive deeper into any pillar or post brief
+
+**Note:** The plan command writes the strategy report to file due to its size (10-50 content briefs). For a quick on-screen scorecard, use `/seo-grader:audit`. For the combined audit + strategy + competitive report, use `/seo-grader:export`.

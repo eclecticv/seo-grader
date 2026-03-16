@@ -1,12 +1,9 @@
 {
-  "name": "seo-strategy",
-  "version": "0.1.0",
-  "description": "Generate positioning-led, stage-gated SEO content strategies for startups using a three-layer methodology",
+  "name": "seo-grader",
+  "version": "1.0.0",
+  "description": "Audit website SEO health against 21 checks, generate three-layer content strategies, and analyze competitive landscape. Commands: audit, plan, export.",
   "author": {
     "name": "And/or Labs",
     "url": "https://andorlabs.ca"
-  },
-  "repository": "https://github.com/andorlabs/seo-strategy",
-  "license": "MIT",
-  "keywords": ["seo", "content-strategy", "startup", "marketing"]
+  }
 }

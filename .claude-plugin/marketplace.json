@@ -10,16 +10,16 @@
   },
   "plugins": [
     {
-      "name": "seo-strategy",
-      "description": "Generate positioning-led, stage-gated SEO content strategies for startups. Three-layer methodology: positioning filter, stage gate, revenue-proximity scoring. Dual mode: free heuristics or DataForSEO enhanced.",
-      "version": "0.1.0",
+      "name": "seo-grader",
+      "description": "Audit website SEO health against 21 checks (Technical SEO, E-E-A-T, Content Depth), generate positioning-led content strategies with the three-layer framework, and analyze competitive landscape. Dual mode: free heuristics or DataForSEO enhanced.",
+      "version": "1.0.0",
       "author": {
         "name": "And/or Labs"
       },
       "source": "./",
       "category": "marketing",
-      "tags": ["seo", "content-strategy", "startup", "marketing", "keyword-research", "positioning"],
-      "homepage": "https://github.com/eclecticv/seo-strategy"
+      "tags": ["seo", "content-strategy", "technical-seo", "eeat", "competitive-analysis", "keyword-research"],
+      "homepage": "https://github.com/eclecticv/seo-grader"
     }
   ]
 }

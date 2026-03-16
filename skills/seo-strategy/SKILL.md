@@ -44,7 +44,7 @@ Generate a strategy in three sequential steps:
 The skill operates in two modes based on whether DataForSEO credentials are configured:
 
 ### Enhanced Mode (DataForSEO)
-When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo-strategy.local.md`:
+When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo-grader.local.md`:
 - Real search volume data from Google
 - Precise keyword difficulty scores (0-100)
 - Competitor keyword profiles with traffic estimates
@@ -115,7 +115,7 @@ See `examples/sample-report.md` for a complete example of this structure.
 
 ## Settings
 
-Users configure the plugin via `.claude/seo-strategy.local.md`:
+Users configure the plugin via `.claude/seo-grader.local.md`:
 
 ```yaml
 ---
