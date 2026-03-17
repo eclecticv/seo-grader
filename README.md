@@ -5,7 +5,7 @@ Audit website SEO health against 21 checks and generate positioning-led content 
 ## Install
 
 ```bash
-claude /install eclecticv/seo-grader
+claude /install seo-grader@andorlabs
 ```
 
 Or load for a single session:
