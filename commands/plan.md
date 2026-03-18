@@ -4,7 +4,7 @@ argument-hint: <website-url>
 allowed-tools: Read, Write, Agent, WebFetch, WebSearch
 ---
 
-Generate a comprehensive SEO content strategy for the website at $ARGUMENTS using the three-layer framework (positioning-led, stage-gated, revenue-proximity scored).
+Generate a comprehensive SEO content strategy for the website at $ARGUMENTS using the three-layer framework (positioning-filtered, stage-contextualized, revenue-proximity scored). The strategy produces **100+ post ideas across 5-8 pillars** with full detailed briefs for the top 10-15 priority posts.
 
 ## Setup
 
@@ -12,8 +12,7 @@ Generate a comprehensive SEO content strategy for the website at $ARGUMENTS usin
    - `dataforseo_login` and `dataforseo_password` — if both are non-empty, operate in **enhanced mode** (use DataForSEO API). Otherwise, operate in **free mode** (SERP heuristics only).
    - `country` (default: US), `language` (default: en)
    - `industry`, `audience` — optional context to improve research
-   - `difficulty_ceiling` (default: 40) — max keyword difficulty to include
-   - `stage_override` — if set, skip auto-detection and use this stage
+   - `stage_override` — if set, skip auto-detection and use this stage (affects cadence, not filtering)
 
 2. Load the SEO strategy methodology from the seo-strategy skill. This provides the three-layer framework, scoring rubrics, and content brief templates.
 
@@ -42,7 +41,7 @@ Launch the `competitor-researcher` agent with:
 Launch the `strategy-synthesizer` agent with:
 - The complete site analysis output from Agent 1
 - The complete competitor research output from Agent 2
-- All settings (DataForSEO creds, country, language, difficulty ceiling, stage override)
+- All settings (DataForSEO creds, country, language, stage override)
 - Instructions to apply the three-layer framework and generate:
   - A full strategy report written to `./seo-strategy-report.md`
   - A brief summary returned to the conversation
@@ -51,9 +50,9 @@ Launch the `strategy-synthesizer` agent with:
 
 After the strategy-synthesizer completes:
 
-1. Display the brief summary it returned (stage, pillar count, post count, top priorities, key insight)
+1. Display the brief summary it returned (positioning, stage context, pillar count, total post ideas, priority brief count, top 5 posts to publish first, key insight)
 2. Tell the user where the full report was saved: `./seo-strategy-report.md`
 3. If in free mode, mention they can get more precise metrics by configuring DataForSEO credentials in `.claude/seo-grader.local.md`
 4. Offer to dive deeper into any pillar or post brief
 
-**Note:** The plan command writes the strategy report to file due to its size (10-50 content briefs). For a quick on-screen scorecard, use `/seo-grader:audit`. For the combined audit + strategy + competitive report, use `/seo-grader:export`.
+**Note:** The plan command writes the strategy report to file due to its size (5-8 pillars, 100+ post ideas, 10-15 detailed briefs). For a quick on-screen scorecard, use `/seo-grader:audit`. For the combined audit + strategy + competitive report, use `/seo-grader:export`.

@@ -1,8 +1,28 @@
 # Content Brief Template
 
-Standard structure for every post brief in the strategy report. The strategy-synthesizer agent produces briefs following this exact format.
+The strategy report uses two output tiers: a **Topic Map** (lightweight entries for 100+ ideas) and **Priority Briefs** (full detailed briefs for the top 10-15 posts).
 
-## Brief Structure
+## Topic Map Entry (Tier 1 — All 100+ Ideas)
+
+Every post idea in the strategy gets this compact format, organized by pillar:
+
+```markdown
+| # | Post Title | Target Keyword | Rev. | Funnel | Difficulty | Volume |
+|---|-----------|---------------|------|--------|------------|--------|
+| 1 | [SEO-optimized title] | [primary keyword] | 5 | BOFU | 18 | 1,200 |
+| 2 | [SEO-optimized title] | [primary keyword] | 4 | MOFU | 25 | 800 |
+| 3 | [SEO-optimized title] | [primary keyword] | 3 | TOFU | 32 | 2,400 |
+```
+
+**Column definitions:**
+- **Rev.**: Revenue-proximity score (1-5)
+- **Funnel**: BOFU (bottom), MOFU (mid), TOFU (top)
+- **Difficulty**: Estimated keyword difficulty (0-100, or range in free mode)
+- **Volume**: Monthly search volume (or "est." in free mode)
+
+Sort within each pillar by Rev. score descending, then Difficulty ascending.
+
+## Priority Brief Structure (Tier 2 — Top 10-15 Posts)
 
 ```markdown
 ### [Post Number]. [SEO Title]
@@ -110,17 +130,18 @@ The full report starts with an executive summary:
 
 ## Executive Summary
 
-**Company Stage**: [Seed / Growth / Scale] (confidence: [High/Medium/Low])
 **Positioning**: [One-line positioning statement extracted from site]
 **Revenue Model**: [SaaS / Services / Ecommerce / Marketplace]
 **Target Audience**: [ICP description]
+**Company Stage**: [Seed / Growth / Scale] (confidence: [High/Medium/Low]) — used for cadence, not filtering
 
 ### Strategy Overview
-- **Pillars**: [count] pillar topics
-- **Total Posts**: [count] supporting posts
+- **Pillars**: [5-8] pillar topics
+- **Total Post Ideas**: [100+] across all pillars
+- **Priority Briefs**: [10-15] fully detailed
 - **Estimated Difficulty Range**: [X-Y]
-- **Funnel Distribution**: [X% bottom, Y% mid, Z% top]
-- **Priority Publishing Timeline**: [X months to publish all at recommended cadence]
+- **Score Distribution**: [X ideas at Score 5, Y at Score 4, Z at Score 3, etc.]
+- **Funnel Distribution**: [X% BOFU, Y% MOFU, Z% TOFU]
 
 ### Key Findings
 - [Finding 1 — e.g., "Strong opportunity in [topic area] with low competition"]
@@ -134,31 +155,46 @@ The full report starts with an executive summary:
 
 ---
 
-[Pillar briefs follow, then post briefs organized by pillar]
+[Pillar architecture → Topic maps per pillar → Priority briefs → Publishing roadmap]
 ```
 
-## Publishing Order Section
+## Publishing Roadmap Section
 
-After all briefs, include a prioritized publishing order:
+After all briefs, include the full prioritized backlog and cadence:
 
 ```markdown
-## Recommended Publishing Order
+## Publishing Roadmap
 
-Posts ordered by: Revenue-proximity score (desc) > Keyword difficulty (asc) > Search volume (desc)
+All 100+ post ideas ordered by: Revenue-proximity score (desc) > Keyword difficulty (asc) > Search volume (desc)
 
+### Phase 1: Quick Wins (Score 5, Difficulty < 30) — Publish First
 | Priority | Post | Pillar | Rev. Score | Difficulty | Volume |
 |----------|------|--------|-----------|------------|--------|
-| 1 | [Title] | [Pillar] | 5 | 22 | 1,200 |
-| 2 | [Title] | [Pillar] | 5 | 28 | 800 |
-| 3 | [Title] | [Pillar] | 4 | 18 | 2,400 |
+| 1 | [Title] | [Pillar] | 5 | 12 | 1,200 |
+| 2 | [Title] | [Pillar] | 5 | 18 | 800 |
+| ... | ... | ... | ... | ... | ... |
+
+### Phase 2: Authority Builders (Score 4-5, Difficulty 30-50)
+| Priority | Post | Pillar | Rev. Score | Difficulty | Volume |
+|----------|------|--------|-----------|------------|--------|
+| ... | ... | ... | ... | ... | ... |
+
+### Phase 3: Topical Depth (Score 3, All Difficulties)
+| Priority | Post | Pillar | Rev. Score | Difficulty | Volume |
+|----------|------|--------|-----------|------------|--------|
+| ... | ... | ... | ... | ... | ... |
+
+### Phase 4: Full Coverage (Score 1-2, Build Domain Authority)
+| Priority | Post | Pillar | Rev. Score | Difficulty | Volume |
+|----------|------|--------|-----------|------------|--------|
 | ... | ... | ... | ... | ... | ... |
 
 ### Recommended Cadence
-- **Seed stage**: 1-2 posts/month (focus on quality over quantity)
-- **Growth stage**: 2-4 posts/month
-- **Scale stage**: 4-8 posts/month
+- **Seed stage**: 1-2 posts/month — Phase 1 first, expect 12+ months for full backlog
+- **Growth stage**: 2-4 posts/month — Phases 1-2 in parallel
+- **Scale stage**: 4-8 posts/month — All phases in parallel with dedicated content team
 
-At this cadence, full strategy completion: ~[X] months
+At [detected cadence], full strategy completion: ~[X] months
 ```
 
 ## Competitor Analysis Section

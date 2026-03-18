@@ -69,12 +69,16 @@ Use the approximate result count reported by the search engine:
 | 51-70 | Hard | Unlikely without significant authority |
 | 71-100 | Very Hard | Not recommended for startups |
 
-## Applying the Difficulty Ceiling
+## Using Difficulty in the Strategy
 
-Compare estimated difficulty against the `difficulty_ceiling` setting (default: 40).
+Difficulty is used for **sorting and phasing**, not filtering. All keywords are included regardless of difficulty:
 
-- Score ≤ ceiling → **Include** keyword in strategy
-- Score > ceiling → **Exclude** keyword (note as "aspirational" if score 4-5 on revenue proximity)
+- **Phase 1 (Quick Wins)**: Score 5, difficulty < 30
+- **Phase 2 (Authority Builders)**: Score 4-5, difficulty 30-50
+- **Phase 3 (Topical Depth)**: Score 3, all difficulties
+- **Phase 4 (Full Coverage)**: Score 1-2, all difficulties
+
+High-difficulty keywords with high revenue-proximity (Score 4-5) are noted as long-term targets worth building toward with supporting content.
 
 ## Traffic Existence Validation
 

@@ -1,33 +1,27 @@
 ---
 name: seo-strategy
-description: Three-layer SEO methodology for startup content strategies. Use when the user asks to "build an SEO strategy", "create a content plan for my startup", "what content should I write to rank on Google", "analyze competitors' SEO", "generate content briefs", "plan blog content", "keyword research for my website", or mentions "SEO for startups", "content pillars", "pillar topics", "revenue-proximity scoring", "stage-gated SEO", "positioning-led SEO".
+description: Three-layer SEO methodology for startup content strategies. Generates 100+ post ideas across 5-8 pillars. Use when the user asks to "build an SEO strategy", "create a content plan for my startup", "what content should I write to rank on Google", "analyze competitors' SEO", "generate content briefs", "plan blog content", "keyword research for my website", or mentions "SEO for startups", "content pillars", "pillar topics", "revenue-proximity scoring", "positioning-led SEO".
 version: 0.1.0
 ---
 
 # SEO Content Strategy Methodology
 
-A three-layer framework for generating startup SEO content strategies that are positioning-aligned, stage-appropriate, and revenue-prioritized.
+A three-layer framework for generating comprehensive startup SEO content strategies: positioning-filtered, stage-contextualized, and revenue-scored. Produces **100+ post ideas across 5-8 pillars** — every positioning-aligned idea is included and scored, never filtered by stage or score threshold.
 
 ## The Three-Layer Framework
 
-Every keyword recommendation passes through three sequential filters. Failure at any layer means disqualification — regardless of search volume.
-
-### Layer 1: Positioning Filter
-Extract the startup's positioning (category, unique claim, ICP) from their website. Every candidate keyword must reinforce the category position. High-volume keywords that pull the brand into generic/commodity territory are rejected.
+### Layer 1: Positioning Filter (Hard Gate)
+Extract the startup's positioning (category, unique claim, ICP, service lines) from their website. Every candidate keyword must reinforce the category position. High-volume keywords that pull the brand into generic/commodity territory are rejected. This is the only filter that removes ideas.
 
 See `references/three-layer-framework.md` for the full positioning filter methodology with pass/fail examples.
 
-### Layer 2: Stage Gate
-Detect company stage (Seed, Growth, Scale) from website signals: content volume, product maturity, social proof, team size, funding indicators. Each stage gets a prescribed content volume and funnel mix:
-
-- **Seed**: 10-15 posts, 80% bottom-funnel, revenue score ≥ 4
-- **Growth**: 20-30 posts, balanced funnel, revenue score ≥ 3
-- **Scale**: 30-50+ posts, full funnel, revenue score ≥ 1
+### Layer 2: Stage Context (Informational)
+Detect company stage (Seed, Growth, Scale) from website signals. Stage is reported as metadata and informs publishing cadence and priority ordering — but it **never limits** the number of pillars, posts, or score thresholds. The full topic map is always generated regardless of stage.
 
 See `references/stage-detection.md` for the weighted scoring algorithm and signal tables.
 
-### Layer 3: Revenue-Proximity Score
-Every keyword receives a 1-5 score measuring distance from revenue for the specific business model. Score 5 = direct purchase intent, Score 1 = tangential awareness. Stage minimums filter low-value keywords automatically.
+### Layer 3: Revenue-Proximity Score (Annotation)
+Every keyword receives a 1-5 score measuring distance from revenue for the specific business model. Score 5 = direct purchase intent, Score 1 = tangential awareness. **All scores are included in the output** — scores are used to sort and prioritize, never to exclude.
 
 See `references/revenue-proximity-rubric.md` for scoring matrices by business model (SaaS, Services, Ecommerce, Marketplace).
 
@@ -61,9 +55,15 @@ When no API credentials are configured:
 
 See `references/difficulty-heuristics.md` for the scoring rubric and validation methods.
 
-## Content Brief Standards
+## Output Scale
 
-Every post brief includes:
+The strategy produces two tiers of output:
+
+### Tier 1: Topic Map (100+ ideas)
+Every post idea gets a lightweight entry: title, target keyword, revenue-proximity score, funnel position, pillar assignment, and estimated difficulty. Organized by pillar, sorted by score within each pillar. This is the full content backlog.
+
+### Tier 2: Priority Briefs (Top 10-15)
+The highest-priority posts (sorted by revenue-proximity desc, difficulty asc) get the full treatment:
 - SEO title + meta description (optimized for CTR)
 - Target keyword + secondary keywords
 - Revenue-proximity score with rationale
@@ -75,7 +75,7 @@ Every post brief includes:
 - E-E-A-T signals specific to this content type and topic
 - Schema markup recommendation (JSON-LD type)
 
-See `references/content-brief-template.md` for the complete template structure.
+See `references/content-brief-template.md` for both the topic map format and detailed brief template.
 
 ## E-E-A-T Integration
 
@@ -104,12 +104,12 @@ See `references/schema-markup-patterns.md` for JSON-LD templates.
 
 The final report follows this hierarchy:
 
-1. **Executive Summary** — stage, positioning, key findings, content gaps
+1. **Executive Summary** — positioning, stage (context only), key findings, content gaps
 2. **Competitive Landscape** — competitors analyzed, keyword gaps, weaknesses
-3. **Pillar Briefs** (3-5) — each with pillar page brief + supporting post list
-4. **Post Briefs** — organized by pillar, full brief per post
-5. **Publishing Order** — prioritized by revenue-proximity (desc), difficulty (asc), volume (desc)
-6. **Recommended Cadence** — stage-appropriate publishing frequency
+3. **Pillar Architecture** (5-8 pillars) — each with pillar page brief + topic map of 12-20 post ideas
+4. **Topic Map** — the full 100+ post backlog organized by pillar, every idea scored
+5. **Priority Briefs** (top 10-15) — full detailed briefs for the highest-priority posts
+6. **Publishing Roadmap** — prioritized by revenue-proximity (desc), difficulty (asc), volume (desc), with stage-appropriate cadence
 
 See `examples/sample-report.md` for a complete example of this structure.
 
@@ -125,8 +125,7 @@ country: US                 # Target market (location code)
 language: en
 industry: ""                # Optional: improves competitor discovery
 audience: ""                # Optional: shapes content tone recommendations
-difficulty_ceiling: 40      # Max keyword difficulty to include
-stage_override: ""          # Override auto-detected stage
+stage_override: ""          # Override auto-detected stage (affects cadence, not filtering)
 ---
 ```
 

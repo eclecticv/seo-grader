@@ -17,7 +17,7 @@ Run the 21-check SEO audit, competitive landscape analysis, and three-layer cont
 
 1. **Follow the crawl & screenshot procedure** in `skills/search-gap/reference/shared-procedures.md` — this includes crawling all pages and scoring all 21 checks
 2. **Run competitive landscape analysis** — extract 5 core topics, WebSearch each, identify top 3 SERP competitors, analyze their content
-3. **Run the full content strategy** — follow all steps from the `plan` command (three-layer framework, pillar architecture, content briefs)
+3. **Run the full content strategy** — follow all steps from the `plan` command (three-layer framework, 5-8 pillars, 100+ post ideas, 10-15 priority briefs)
 4. **Write the comprehensive combined analysis** to a single markdown file in the current directory
 
 ## Output
@@ -94,7 +94,26 @@ The file must follow this EXACT structure:
 
 # Part 3: Content Strategy
 
-[Full three-layer content strategy output: executive summary, pillar briefs, post briefs, publishing order, recommended cadence]
+## Executive Summary
+[Positioning, stage context, key findings]
+
+## Pillar Architecture (5-8 Pillars)
+
+### Pillar 1: [Topic]
+[Pillar page brief]
+
+#### Topic Map (12-20 ideas)
+| # | Post Title | Target Keyword | Rev. | Funnel | Diff. | Volume |
+|---|-----------|---------------|------|--------|-------|--------|
+| 1 | ... | ... | 5 | BOFU | ... | ... |
+
+[...repeat for all 5-8 pillars...]
+
+## Priority Briefs (Top 10-15)
+[Full detailed briefs for highest-priority posts]
+
+## Publishing Roadmap
+[Phased publishing order for all 100+ ideas, with cadence recommendation]
 ```
 
 ## Critical Rules for the Output
@@ -107,7 +126,10 @@ The file must follow this EXACT structure:
 6. **N/A checks are still listed** with explanations
 7. **Section grades count only applicable items** — N/A excluded from denominator
 8. **Competitor analysis is based on actual SERP data** — run WebSearches
-9. **Content strategy follows three-layer framework** — positioning-led, stage-gated, revenue-scored
+9. **Content strategy follows three-layer framework** — positioning-filtered, stage-contextualized, revenue-scored
+10. **100+ post ideas across 5-8 pillars** — no ideas filtered by stage or score threshold
+11. **Top 10-15 posts get full detailed briefs** — the rest are in the topic map with scores
+12. **Publishing roadmap covers all ideas** — phased by score, sorted by difficulty
 
 ## After Writing the File
 
@@ -125,9 +147,10 @@ File: [filename]-seo-export.md
     Top Competitors: [domain1], [domain2], [domain3]
 
   Content Strategy:
-    Stage: [Seed/Growth/Scale]
-    Pillars: [N]
-    Post Briefs: [N]
+    Stage: [Seed/Growth/Scale] (context only)
+    Pillars: [N] (5-8)
+    Post Ideas: [N] (100+)
+    Priority Briefs: [N] (10-15 detailed)
 
 Open [filename]-seo-export.md for the full report.
 ```

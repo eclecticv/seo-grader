@@ -1,16 +1,17 @@
 # The Three-Layer Framework
 
-A startup SEO methodology that filters keywords through positioning, stage, and revenue proximity — in that order. Each layer is a hard gate: keywords that fail any layer are discarded regardless of volume.
+A startup SEO methodology that generates comprehensive topic maps by filtering keywords through positioning, enriching with stage context, and scoring by revenue proximity. The framework produces **100+ post ideas across 5-8 pillars** — nothing is filtered out by stage or score. Every idea is scored and ranked so the user can prioritize, but the full landscape is always visible.
 
-## Layer 1: Positioning Filter
+## Layer 1: Positioning Filter (Hard Gate)
 
-Before touching keyword data, extract the startup's positioning:
+The only hard filter. Before touching keyword data, extract the startup's positioning:
 
 ### What to Extract
 - **Category**: What market category are they in (or creating)?
 - **Unique claim**: What do they do differently from incumbents?
 - **ICP**: Who is the ideal customer? (Role, company size, industry)
 - **Anti-positioning**: What they explicitly are NOT (e.g., "not an enterprise tool")
+- **Service lines / product areas**: What distinct offerings does the business have? Each is a potential pillar.
 
 ### The Filter Test
 For every candidate keyword, ask: **"Would ranking #1 for this term reinforce our category position?"**
@@ -27,51 +28,27 @@ For every candidate keyword, ask: **"Would ranking #1 for this term reinforce ou
 
 ### Edge Cases
 - **Category-creating startups**: If the startup is defining a new category, allow keywords in adjacent categories ONLY if the content explicitly bridges to the new category. E.g., a "revenue intelligence" startup can target "sales analytics" if the content frames sales analytics as a subset of revenue intelligence.
-- **Multi-product startups**: Use the primary positioning from the homepage. Don't try to serve multiple positions in one strategy.
+- **Multi-product / multi-service businesses**: Map each distinct service line or product area as a potential pillar. A GTM consultancy offering positioning, fractional leadership, and AI-powered sprints gets a pillar for each.
 
-## Layer 2: Stage Gate
+## Layer 2: Stage Context (Informational — Not a Filter)
 
-### Stage Detection Signals
+Detect the company's stage to provide context in the report. Stage informs **recommended publishing order and cadence** but does NOT limit the number of pillars, posts, or score thresholds.
 
-**Seed Stage**:
-- Website has < 10 content pages
-- No visible blog or < 5 blog posts
-- Team page shows < 15 people (or no team page)
-- No case studies or social proof
-- Product appears early (beta language, waitlists, "launching soon")
-- Domain likely < 2 years old
-- No visible funding announcements above Series A
+### Stage Detection
+Use the signals in `references/stage-detection.md` to classify as Seed, Growth, or Scale.
 
-**Growth Stage**:
-- 10-50 content pages
-- Active blog with 5-30 posts
-- Team page shows 15-100 people
-- Some case studies, testimonials, logos
-- Product is live with clear pricing
-- Some domain authority signals (backlinks from industry sites)
-- Series A-B funding range
-
-**Scale Stage**:
-- 50+ content pages
-- Mature blog with 30+ posts and regular publishing cadence
-- Team page shows 100+ people (or "careers" page with many openings)
-- Extensive social proof (enterprise logos, analyst mentions)
-- Multiple products or tiers
-- Strong domain authority
-- Series C+ or profitable
-
-### Stage → Content Prescription
-
-| Stage | Total Posts | Funnel Mix | Min Revenue Score | Pillar Count |
-|-------|-----------|------------|-------------------|--------------|
-| Seed | 10-15 | 80% bottom, 20% mid | ≥ 4 | 1-2 |
-| Growth | 20-30 | 50% bottom, 30% mid, 20% top | ≥ 3 | 3-4 |
-| Scale | 30-50+ | Balanced | ≥ 1 | 3-5 |
+### How Stage Is Used
+- **Report metadata**: Stage is reported in the executive summary for context.
+- **Publishing cadence**: Seed companies get a longer timeline; Scale companies get an aggressive one.
+- **Priority sorting**: The recommended publishing order front-loads high-revenue-proximity posts for Seed/Growth stages, while Scale companies get a balanced rollout.
+- **NOT used to limit**: Stage never caps pillar count, post count, or filters out posts by score.
 
 ### Stage Override
-Users can override auto-detection in settings with `stage_override: "seed"`, `"growth"`, or `"scale"`. Always respect the override — the user knows their situation better than the signals suggest.
+Users can override auto-detection in settings with `stage_override: "seed"`, `"growth"`, or `"scale"`. Always respect the override.
 
-## Layer 3: Revenue-Proximity Score
+## Layer 3: Revenue-Proximity Score (Annotation — Not a Filter)
+
+Every keyword receives a 1-5 score measuring distance from revenue for the specific business model. **All scores are included in the output.** The score is used to sort and prioritize, never to exclude.
 
 ### Scoring Rubric (1-5)
 
@@ -122,10 +99,33 @@ Related to the industry but not in any buying journey for your product.
 
 **Marketplace**: Score 5 includes both supply and demand side keywords. "[Category] near me" or "[category] marketplace" score 5.
 
-### Applying the Minimum Score Filter
-After scoring every keyword, filter by the stage minimum:
-- Seed: Discard anything below score 4
-- Growth: Discard anything below score 3
-- Scale: Keep everything (score ≥ 1)
+## Pillar Generation
 
-This ensures seed-stage startups focus exclusively on content that can drive revenue quickly, while scale-stage companies can afford awareness plays.
+### Target: 5-8 Pillars, 100+ Post Ideas
+
+Generate pillars by mapping the full topic landscape around the business:
+
+1. **Service/product pillars**: One pillar per distinct service line or product area.
+2. **ICP problem pillars**: One pillar per major problem category the ICP faces.
+3. **Industry/vertical pillars**: If the business serves multiple verticals, each can be a pillar.
+4. **Methodology/thought-leadership pillar**: The business's unique approach or framework.
+5. **Competitive landscape pillar**: Comparisons, alternatives, reviews.
+
+### Post Ideas Per Pillar
+Generate **12-20 post ideas per pillar** to hit 100+ total. For each pillar, systematically cover:
+- Score 5: Comparisons, alternatives, pricing, hiring/buying guides
+- Score 4: How-to's, solution guides, tool roundups, case studies
+- Score 3: Explainers, best practices, frameworks, benchmarks
+- Score 2: Industry trends, statistics, state-of-the-market
+- Score 1: Thought leadership, adjacent topics, career content
+
+### Post Idea Format (Lightweight)
+Each of the 100+ post ideas uses the compact topic map format (see `references/content-brief-template.md`). Full detailed briefs are generated only for the top 10-15 priority posts.
+
+## Output Requirements
+
+1. **No ideas are filtered out by stage or score.** Every positioning-aligned idea is included.
+2. **Every idea is scored.** Revenue-proximity 1-5 on every entry.
+3. **Ideas are organized by pillar**, then sorted by revenue-proximity score (desc) within each pillar.
+4. **Full briefs for top 10-15 posts.** The highest-priority items get the complete treatment.
+5. **Publishing roadmap** respects stage for cadence but shows the full 100+ item backlog.

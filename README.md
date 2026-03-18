@@ -1,6 +1,6 @@
 # seo-grader
 
-Audit website SEO health against 21 checks and generate positioning-led content strategies for startups. Every check cites its source. Three-layer framework ensures every keyword recommendation is validated against your positioning, company stage, and distance from revenue.
+Audit website SEO health against 21 checks and generate comprehensive content strategies for startups. Every check cites its source. Three-layer framework generates **100+ post ideas across 5-8 pillars** — positioning-filtered, stage-contextualized, and revenue-scored.
 
 ## Install
 
@@ -18,8 +18,8 @@ claude --plugin-dir /path/to/seo-grader
 | Command | Usage | What it does |
 |---------|-------|-------------|
 | **audit** | `/seo-grader:audit <url>` | Run 21 SEO checks, print scorecard + findings on screen |
-| **plan** | `/seo-grader:plan <url>` | Full three-layer content strategy with pillar topics + post briefs (writes to file) |
-| **export** | `/seo-grader:export <url>` | Write complete report (audit + competitive landscape + strategy) to file |
+| **plan** | `/seo-grader:plan <url>` | Full content strategy: 5-8 pillars, 100+ post ideas, 10-15 priority briefs (writes to file) |
+| **export** | `/seo-grader:export <url>` | Complete report: audit + competitive landscape + full strategy to file |
 
 ## What It Checks
 
@@ -33,11 +33,11 @@ claude --plugin-dir /path/to/seo-grader
 
 ### Content Strategy (Three-Layer Framework)
 
-1. **Positioning Filter** — Extracts your market position from your website. Rejects keywords that dilute your category story, even if they have high volume.
+1. **Positioning Filter** (hard gate) — Extracts your market position from your website. Rejects keywords that dilute your category story, even if they have high volume.
 
-2. **Stage Gate** — Detects whether you're Seed, Growth, or Scale. Prescribes stage-appropriate content volume and funnel mix. Seed gets 10-15 bottom-funnel posts, not 50 awareness articles.
+2. **Stage Context** (informational) — Detects whether you're Seed, Growth, or Scale. Informs publishing cadence and priority order. Never limits pillar count, post count, or score thresholds.
 
-3. **Revenue-Proximity Score** — Every keyword scored 1-5 by distance from revenue for your business model. Bottom-funnel comparison posts rank above thought leadership.
+3. **Revenue-Proximity Score** (annotation) — Every keyword scored 1-5 by distance from revenue for your business model. All scores included — used to sort and prioritize, never to filter.
 
 ## How the Plan Command Works
 
@@ -75,7 +75,6 @@ country: US
 language: en
 industry: "B2B SaaS"
 audience: "technical founders"
-difficulty_ceiling: 40
 ---
 ```
 
@@ -89,14 +88,10 @@ difficulty_ceiling: 40
 - **Observation** — what was found on the site
 - **How to fix** — actionable recommendation (FAIL only)
 
-### Content briefs produce:
-- SEO title + meta description
-- Target keyword + secondary keywords
-- Revenue-proximity score with rationale
-- SERP-matched content format
-- H2/H3 outline with key points
-- Word count target, internal linking map, CTA
-- E-E-A-T guidance + schema markup
+### Content strategy produces:
+- **Topic map**: 100+ post ideas across 5-8 pillars, each scored 1-5
+- **Priority briefs** (top 10-15): SEO title, meta description, target keyword, revenue-proximity score, SERP-matched format, H2/H3 outline, word count, internal linking, CTA, E-E-A-T guidance, schema markup
+- **Publishing roadmap**: Phased by score, sorted by difficulty
 
 ## Requirements
 

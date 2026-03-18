@@ -1,6 +1,6 @@
 # Stage Detection Guide
 
-How to classify a startup as Seed, Growth, or Scale from website signals. The site-analyzer agent uses these signals to determine the appropriate content strategy volume and funnel mix.
+How to classify a startup as Seed, Growth, or Scale from website signals. The site-analyzer agent uses these signals to provide context in the strategy report. Stage informs **publishing cadence and priority ordering** but never limits the number of pillars, posts, or score thresholds — the full 100+ idea topic map is always generated regardless of stage.
 
 ## Signal Categories
 
@@ -89,9 +89,22 @@ Assign each signal category a stage vote (Seed=1, Growth=2, Scale=3). The final 
 ## Override Rules
 
 1. **Settings override always wins**: If user sets `stage_override` in settings, use that.
-2. **When in doubt, go one stage lower**: Better to under-prescribe content (can always add more) than overwhelm a team that can't execute.
-3. **Content velocity matters**: A Growth-stage company with no content team should get Seed-stage prescriptions. Note this in the report.
+2. **When in doubt, go one stage lower**: Stage affects cadence recommendations, not content scope.
+3. **Content velocity matters**: A Growth-stage company with no content team should get Seed-stage cadence. Note this in the report.
 4. **Bootstrapped companies**: May show Seed funding signals but Growth/Scale in everything else. Don't let funding alone determine stage.
+
+## How Stage Affects the Strategy
+
+Stage is **context, not a filter**. It determines:
+- **Publishing cadence**: Seed = 1-2/month, Growth = 2-4/month, Scale = 4-8/month
+- **Priority ordering**: Seed stages front-load Score 5 posts; Scale stages balance across scores
+- **Cadence-to-completion estimate**: How long it takes to work through the full 100+ post backlog
+
+Stage does NOT determine:
+- Number of pillars (always 5-8)
+- Number of post ideas (always 100+)
+- Minimum revenue-proximity score (all scores 1-5 included)
+- Funnel mix (all stages TOFU/MOFU/BOFU represented)
 
 ## Output Format
 
