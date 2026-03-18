@@ -1,6 +1,6 @@
 # Shared Procedures
 
-Common procedures used by seo-grader commands (audit, plan, export).
+Common procedures used by the /seo:strategy command.
 
 ## Crawl & Screenshot Procedure
 

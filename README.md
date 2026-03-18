@@ -1,43 +1,31 @@
-# seo-grader
+# SEO in a Box
 
 **A complete SEO strategy in a box for busy founders.** Point it at your website, get back a prioritized content plan — 100+ post ideas across 5-8 pillars, with production-ready briefs you can hand directly to a writer. No SEO expertise required.
 
-The plugin crawls your site, analyzes your competitors, and generates a full content strategy — audit, keyword research, pillar architecture, topic map, and detailed briefs with search volume and difficulty data. It runs in Claude Code with three commands and works out of the box. Add a [DataForSEO](https://dataforseo.com) key and it upgrades to precise keyword metrics.
+One command does everything: crawls your site, runs a 21-check audit, analyzes your competitors, and generates a full content strategy with keyword metrics, pillar architecture, topic map, detailed briefs, and a phased publishing roadmap. Add a [DataForSEO](https://dataforseo.com) key and it upgrades to precise keyword metrics.
 
 ## Install
 
 ```bash
-claude /install seo-grader@andorlabs
+claude /install seo@andorlabs
 ```
 
 Or load for a single session:
 ```bash
-claude --plugin-dir /path/to/seo-grader
+claude --plugin-dir /path/to/seo-in-a-box # repo name
 ```
 
-## Why This Exists
+## Usage
 
-Most SEO tools dump a spreadsheet of keywords sorted by volume and leave you to figure out the rest. That's useless for a founder who needs to know: *what should I write first, and why?*
+```
+/seo:strategy <url>
+```
 
-This plugin answers that question using a **three-layer framework**:
+That's it. One command, full report.
 
-1. **Positioning Filter** (hard gate) — Extracts your market position from your website. Rejects keywords that pull your brand into generic/commodity territory, even if they have high volume. A CRM for solo founders shouldn't write about enterprise pipeline management.
+## What It Does
 
-2. **Stage Context** (informational) — Auto-detects whether you're Seed, Growth, or Scale from website signals. Informs publishing cadence and priority order — but never limits how many ideas you get. You always get the full 100+ topic map.
-
-3. **Revenue-Proximity Score** (annotation) — Every keyword scored 1-5 by distance from revenue for your specific business model (SaaS, Services, Ecommerce, Marketplace). All scores included — used to sort and prioritize, never to filter. The first posts you publish are the ones closest to money.
-
-## Commands
-
-| Command | What it does |
-|---------|-------------|
-| `/seo-grader:audit <url>` | Find out what's hurting your search rankings — 21 checks with letter grades and prioritized fixes |
-| `/seo-grader:plan <url>` | Get a complete content strategy — 5-8 pillars, 100+ post ideas, 10-15 priority briefs with keyword metrics |
-| `/seo-grader:export <url>` | Get the full picture in one file — audit + competitive landscape + full strategy report |
-
-## How It Works
-
-### Audit: 21 Checks Across 3 Categories
+### 1. Crawls & Audits Your Site (21 Checks)
 
 | Category | Checks | Sources |
 |----------|--------|---------|
@@ -47,12 +35,12 @@ This plugin answers that question using a **three-layer framework**:
 
 Every check includes the exact source citation, what was observed on your site, and a specific fix if it fails.
 
-### Plan: Parallel Agent Architecture
+### 2. Researches Competitors
 
-The strategy command runs three specialized agents:
+Three specialized agents run in parallel:
 
 ```
-/seo-grader:plan https://yoursite.com
+/seo:strategy https://yoursite.com
         |
         |--- site-analyzer (parallel)
         |    Crawls your site → extracts positioning, detects stage,
@@ -62,12 +50,28 @@ The strategy command runs three specialized agents:
         |    Finds 3-5 category competitors → analyzes their keyword profiles,
         |    content strategies, and weaknesses you can exploit
         |
-        '--- strategy-synthesizer (sequential, receives both outputs)
+        '--- strategy-synthesizer (sequential, receives all outputs + audit)
              Applies three-layer framework → generates 5-8 pillars with 100+
-             post ideas → writes priority briefs and publishing roadmap
+             post ideas → writes combined report (audit + strategy)
 ```
 
-### Two-Tier Output: Topic Map + Priority Briefs
+### 3. Builds a Content Strategy
+
+Uses a **three-layer framework**:
+
+1. **Positioning Filter** (hard gate) — Extracts your market position from your website. Rejects keywords that pull your brand into generic/commodity territory, even if they have high volume. A CRM for solo founders shouldn't write about enterprise pipeline management.
+
+2. **Stage Context** (informational) — Auto-detects whether you're Seed, Growth, or Scale from website signals. Informs publishing cadence and priority order — but never limits how many ideas you get. You always get the full 100+ topic map.
+
+3. **Revenue-Proximity Score** (annotation) — Every keyword scored 1-5 by distance from revenue for your specific business model (SaaS, Services, Ecommerce, Marketplace). All scores included — used to sort and prioritize, never to filter. The first posts you publish are the ones closest to money.
+
+### 4. Delivers Two Output Layers
+
+**On screen:** A scannable summary — audit grades, critical findings, strategy highlights, top 3 posts to write first.
+
+**In a file:** `[company]-seo-report.md` — the complete report with all 21 audit checks, competitive landscape, 5-8 pillars with 100+ post ideas, 10-15 detailed priority briefs, and a phased publishing roadmap.
+
+### Two-Tier Content Output
 
 **Tier 1 — Topic Map (100+ ideas):** Every post idea scored and organized by pillar — title, keyword, revenue score, funnel position, difficulty, volume. This is your full content backlog.
 
@@ -102,7 +106,7 @@ Add your [DataForSEO](https://dataforseo.com) credentials for precise metrics:
 - **Search intent classification** — informational / commercial / transactional
 - **12-month trend data** — spot rising and declining keywords
 
-The plugin will prompt you to set up DataForSEO when running in free mode. To configure in advance, create `.claude/seo-grader.local.md` in your project:
+The plugin will prompt you to set up DataForSEO when running in free mode. To configure in advance, create `.claude/seo.local.md` in your project:
 
 ```yaml
 ---
@@ -117,25 +121,37 @@ audience: "technical founders"
 
 ## Example Output
 
-### Audit scorecard
+### On-screen summary
 ```
-AUDIT: AcmeCRM — 14/19 passing (B+)
-Pages crawled: 8 (homepage, 5 blog posts, 2 product pages)
+SEO REPORT: AcmeCRM
+File: acmecrm-seo-report.md
 
-  Technical SEO         A   (7/8)
-  E-E-A-T Signals       B   (5/6)
-  Content Depth          C+  (2/5)
+  Audit (21 checks):
+    Technical SEO         A   (7/8)
+    E-E-A-T Signals       B   (5/6)
+    Content Depth         C+  (2/5)
+    OVERALL               B+  (14/19 passing)
 
-CRITICAL:
-  - CD-5: No pillar/cluster architecture → Group posts into 2-3 pillars with hub pages
-  - EA-4: Zero external citations in blog posts → Add 2-3 authoritative sources per post
+  CRITICAL:
+    - CD-5: No pillar/cluster architecture → Group posts into 2-3 pillars with hub pages
+    - EA-4: Zero external citations in blog posts → Add 2-3 authoritative sources per post
 
-WARNINGS:
-  - TS-1: Missing JSON-LD on blog posts → Add Article schema to all posts
-  - CD-6: 100% top-funnel content → Add comparison and how-to posts (bottom/mid-funnel)
+  Strategy:
+    Positioning: Simple CRM for solo founders and freelancers
+    Stage: Seed (context only)
+    Competitors: folk.app, attio.com, clay.com
+    Pillars: 6
+    Post Ideas: 112
+    Priority Briefs: 12 detailed
+    Top 3 posts to write first:
+      1. AcmeCRM vs Folk CRM — Rev. 5, Diff. 8
+      2. CRM for Freelancers — Rev. 5, Diff. 12
+      3. Spreadsheet vs CRM: When to Switch — Rev. 4, Diff. 18
+
+Open acmecrm-seo-report.md for the full report.
 ```
 
-### Strategy topic map (excerpt)
+### Topic map excerpt (from the report file)
 ```
 Pillar 1: Simple CRM for Small Teams — 18 post ideas
 
@@ -148,7 +164,7 @@ Pillar 1: Simple CRM for Small Teams — 18 post ideas
 | …                                                                          |
 ```
 
-### Priority brief (excerpt)
+### Priority brief excerpt (from the report file)
 ```
 ### AcmeCRM vs Folk CRM: Which Is Better for Solo Founders?
 

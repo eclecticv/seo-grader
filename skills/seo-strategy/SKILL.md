@@ -35,10 +35,10 @@ Generate a strategy in three sequential steps:
 
 ## Dual Mode Operation
 
-The skill operates in two modes based on whether DataForSEO credentials are configured. **Both modes produce keyword metrics in every content brief and the publishing order table.** The `plan` and `export` commands prompt the user to set up DataForSEO when credentials are not found.
+The skill operates in two modes based on whether DataForSEO credentials are configured. **Both modes produce keyword metrics in every content brief and the publishing order table.** The `strategy` command prompts the user to set up DataForSEO when credentials are not found.
 
 ### Enhanced Mode (DataForSEO)
-When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo-grader.local.md`:
+When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo.local.md`:
 - Real search volume data from Google (exact monthly numbers)
 - Precise keyword difficulty scores (0-100, measured)
 - Competitor keyword profiles with traffic estimates
@@ -117,7 +117,7 @@ See `examples/sample-report.md` for a complete example of this structure.
 
 ## Settings
 
-Users configure the plugin via `.claude/seo-grader.local.md`:
+Users configure the plugin via `.claude/seo.local.md`:
 
 ```yaml
 ---

@@ -1,7 +1,7 @@
 {
-  "name": "seo-grader",
+  "name": "seo",
   "version": "1.0.0",
-  "description": "Complete SEO strategy in a box for startup founders. Point it at your website — get back a site audit, competitive analysis, and 100+ post ideas across 5-8 pillars with production-ready briefs (keyword metrics, outlines, CTAs) you can hand to a writer. Rejects keywords that dilute your positioning, scores every idea by distance from revenue, and builds a phased publishing roadmap so the first post you publish is the one most likely to drive pipeline. Works out of the box; prompts for DataForSEO API key to unlock precise search volume and difficulty scores.",
+  "description": "SEO in a Box. One command, full strategy. Point it at your website — get a 21-check site audit, competitive analysis, and 100+ post ideas across 5-8 pillars with production-ready briefs you can hand to a writer. Rejects keywords that dilute your positioning, scores every idea by distance from revenue, and builds a phased publishing roadmap. Works out of the box; prompts for optional DataForSEO API key for precise keyword metrics.",
   "author": {
     "name": "And/or Labs",
     "url": "https://andorlabs.ca"
