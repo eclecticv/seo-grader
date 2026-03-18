@@ -1,4 +1,4 @@
-# SEO Content Strategy Report
+# SEO Report: AcmeCRM
 
 **Generated**: 2026-03-14
 **Website**: https://acmecrm.io

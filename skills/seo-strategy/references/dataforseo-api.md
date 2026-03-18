@@ -1,6 +1,6 @@
 # DataForSEO API Reference
 
-Complete reference for making DataForSEO API calls in enhanced mode. The plugin reads credentials from `.claude/seo.local.md` settings.
+Complete reference for making DataForSEO API calls in enhanced mode. The plugin reads credentials from `.claude/seo-grader.local.md` settings.
 
 ## Authentication
 

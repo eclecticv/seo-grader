@@ -100,4 +100,4 @@ Be transparent in the report:
 - Recommend upgrading to enhanced mode (DataForSEO) for precise metrics
 
 Always include this disclaimer in free-mode reports:
-> **Note**: This strategy was generated in free mode using SERP heuristics. Search volume and difficulty estimates are approximate. For precise keyword metrics, configure DataForSEO credentials in `.claude/seo.local.md`.
+> **Note**: This strategy was generated in free mode using SERP heuristics. Search volume and difficulty estimates are approximate. For precise keyword metrics, configure DataForSEO credentials in `.claude/seo-grader.local.md`.

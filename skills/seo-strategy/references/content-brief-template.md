@@ -122,7 +122,7 @@ This pillar page should:
 The full report starts with an executive summary:
 
 ```markdown
-# SEO Content Strategy Report
+# SEO Report: [Company Name]
 
 **Generated**: [Date]
 **Website**: [URL]

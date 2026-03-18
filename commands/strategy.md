@@ -10,7 +10,7 @@ Create a complete SEO strategy for the website at $ARGUMENTS — site audit, com
 
 ## Setup
 
-1. Read settings from `.claude/seo.local.md` in the current project directory (if it exists). Extract:
+1. Read settings from `.claude/seo-grader.local.md` in the current project directory (if it exists). Extract:
    - `dataforseo_login` and `dataforseo_password` — if both are non-empty, operate in **enhanced mode** (use DataForSEO API). Otherwise, operate in **free mode** (SERP heuristics only).
    - `country` (default: US), `language` (default: en)
    - `industry`, `audience` — optional context to improve research
@@ -25,9 +25,9 @@ Create a complete SEO strategy for the website at $ARGUMENTS — site audit, com
 
    Then ask:
    - **"Continue in free mode"** — proceed without API credentials
-   - **"Set up DataForSEO first"** — guide the user to create `.claude/seo.local.md` with their credentials, then re-read settings and proceed in enhanced mode
+   - **"Set up DataForSEO first"** — guide the user to create `.claude/seo-grader.local.md` with their credentials, then re-read settings and proceed in enhanced mode
 
-   If the user chooses to set up DataForSEO, create `.claude/seo.local.md` with the template from the README and ask them to fill in `dataforseo_login` and `dataforseo_password`. After they confirm, re-read the file and proceed in enhanced mode.
+   If the user chooses to set up DataForSEO, create `.claude/seo-grader.local.md` with the template from the README and ask them to fill in `dataforseo_login` and `dataforseo_password`. After they confirm, re-read the file and proceed in enhanced mode.
 
 3. Load the SEO strategy methodology from the seo-strategy skill. This provides the three-layer framework, scoring rubrics, and content brief templates.
 
@@ -100,6 +100,6 @@ File: [company]-seo-report.md
 Open [company]-seo-report.md for the full report.
 ```
 
-If in free mode, add: "Add DataForSEO credentials to `.claude/seo.local.md` for precise keyword metrics."
+If in free mode, add: "Add DataForSEO credentials to `.claude/seo-grader.local.md` for precise keyword metrics."
 
 Offer to dive deeper into any pillar, post brief, or audit finding.

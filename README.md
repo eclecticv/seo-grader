@@ -12,7 +12,7 @@ claude /install seo@andorlabs
 
 Or load for a single session:
 ```bash
-claude --plugin-dir /path/to/seo-in-a-box # repo name
+claude --plugin-dir /path/to/seo-grader # repo name
 ```
 
 ## Usage
@@ -106,7 +106,7 @@ Add your [DataForSEO](https://dataforseo.com) credentials for precise metrics:
 - **Search intent classification** — informational / commercial / transactional
 - **12-month trend data** — spot rising and declining keywords
 
-The plugin will prompt you to set up DataForSEO when running in free mode. To configure in advance, create `.claude/seo.local.md` in your project:
+The plugin will prompt you to set up DataForSEO when running in free mode. To configure in advance, create `.claude/seo-grader.local.md` in your project:
 
 ```yaml
 ---

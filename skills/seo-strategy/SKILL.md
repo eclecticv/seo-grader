@@ -27,7 +27,16 @@ See `references/revenue-proximity-rubric.md` for scoring matrices by business mo
 
 ## Execution Workflow
 
-Generate a strategy in three sequential steps:
+Generate a strategy in these steps:
+
+0. **Check DataForSEO credentials** — Skip this step if credentials have already been resolved by a calling command (e.g., `/seo:strategy`). Otherwise, before anything else, read `.claude/seo-grader.local.md` to check if `dataforseo_login` and `dataforseo_password` are set. If credentials are NOT found or the file doesn't exist:
+   - Tell the user that DataForSEO is optional but provides real search volume and keyword difficulty data instead of heuristic estimates
+   - Ask if they have credentials they'd like to configure
+   - If yes, save them to `.claude/seo-grader.local.md` using the Settings template format shown in this skill
+   - If no, confirm proceeding in free (heuristic) mode
+   - Only after this is resolved, proceed to Step 1
+
+   Do NOT proceed to site analysis until the credential check is complete.
 
 1. **Analyze the site** — scrape the startup's website to extract positioning, detect company stage, identify revenue model, and inventory existing content. Use the `site-analyzer` agent.
 2. **Research competitors** — find 3-5 category-aligned competitors, analyze their keyword profiles and content strategies, identify gaps. Use the `competitor-researcher` agent. Run in parallel with step 1.
@@ -35,10 +44,10 @@ Generate a strategy in three sequential steps:
 
 ## Dual Mode Operation
 
-The skill operates in two modes based on whether DataForSEO credentials are configured. **Both modes produce keyword metrics in every content brief and the publishing order table.** The `strategy` command prompts the user to set up DataForSEO when credentials are not found.
+The skill operates in two modes based on whether DataForSEO credentials are configured. **Both modes produce keyword metrics in every content brief and the publishing order table.** The credential check in Step 0 of the Execution Workflow handles mode selection.
 
 ### Enhanced Mode (DataForSEO)
-When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo.local.md`:
+When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo-grader.local.md`:
 - Real search volume data from Google (exact monthly numbers)
 - Precise keyword difficulty scores (0-100, measured)
 - Competitor keyword profiles with traffic estimates
@@ -117,7 +126,7 @@ See `examples/sample-report.md` for a complete example of this structure.
 
 ## Settings
 
-Users configure the plugin via `.claude/seo.local.md`:
+Users configure the plugin via `.claude/seo-grader.local.md`:
 
 ```yaml
 ---
