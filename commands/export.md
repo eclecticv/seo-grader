@@ -1,5 +1,5 @@
 ---
-description: Run the full SEO audit, competitive landscape analysis, and content strategy, then write a comprehensive markdown report to file
+description: Get the full picture in one file — site audit, competitive landscape, and prioritized content strategy with keyword metrics and production-ready briefs, all written to a markdown report. Prompts for optional DataForSEO key for precise metrics.
 argument-hint: <website-url>
 allowed-tools: Read, Write, Bash, Agent, WebFetch, WebSearch
 ---
@@ -12,6 +12,24 @@ Run the 21-check SEO audit, competitive landscape analysis, and three-layer cont
 ```
 /seo-grader:export <url>
 ```
+
+## Setup
+
+1. Read settings from `.claude/seo-grader.local.md` in the current project directory (if it exists). Extract:
+   - `dataforseo_login` and `dataforseo_password` — if both are non-empty, operate in **enhanced mode**. Otherwise, operate in **free mode**.
+   - `country` (default: US), `language` (default: en)
+   - `industry`, `audience`, `stage_override`
+
+2. **If DataForSEO credentials are NOT configured**, prompt the user before proceeding:
+
+   Tell the user:
+   > This export will run in **free mode** — keyword difficulty is estimated from SERP heuristics and search volume is shown as relative demand (High/Medium/Low) rather than exact numbers. The audit section is unaffected, but the content strategy section will have approximate keyword metrics.
+   >
+   > For precise search volume, measured keyword difficulty (0-100), and competitor traffic data, you can add a [DataForSEO](https://dataforseo.com) API key.
+
+   Then ask:
+   - **"Continue in free mode"** — proceed without API credentials
+   - **"Set up DataForSEO first"** — guide the user to create `.claude/seo-grader.local.md` with their credentials, then re-read settings and proceed in enhanced mode
 
 ## What It Does
 
@@ -107,13 +125,13 @@ The file must follow this EXACT structure:
 |---|-----------|---------------|------|--------|-------|--------|
 | 1 | ... | ... | 5 | BOFU | ... | ... |
 
-[...repeat for all 5-8 pillars...]
+[...repeat for all 5-8 pillars — every entry must include difficulty and volume data...]
 
 ## Priority Briefs (Top 10-15)
-[Full detailed briefs for highest-priority posts]
+[Full detailed briefs for highest-priority posts, each with search volume and difficulty]
 
 ## Publishing Roadmap
-[Phased publishing order for all 100+ ideas, with cadence recommendation]
+[Phased publishing order for all 100+ ideas, with keyword metrics and cadence recommendation]
 ```
 
 ## Critical Rules for the Output
@@ -130,6 +148,7 @@ The file must follow this EXACT structure:
 10. **100+ post ideas across 5-8 pillars** — no ideas filtered by stage or score threshold
 11. **Top 10-15 posts get full detailed briefs** — the rest are in the topic map with scores
 12. **Publishing roadmap covers all ideas** — phased by score, sorted by difficulty
+13. **Every topic map entry and content brief includes search volume and difficulty** — enhanced mode: exact numbers from DataForSEO; free mode: heuristic difficulty (0-100 with label) and relative volume (High/Medium/Low with evidence). Never omit these fields.
 
 ## After Writing the File
 

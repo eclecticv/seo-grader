@@ -164,10 +164,16 @@ If no DataForSEO:
 
 ### Content Gap Opportunities
 Topics where competitors have content but the startup does not:
-1. **[Topic/Keyword]** — covered by [competitors], [volume], [difficulty]
+1. **[Topic/Keyword]** — covered by [competitors]
+   - Volume: [enhanced: exact monthly number | free: High/Medium/Low with evidence]
+   - Difficulty: [enhanced: 0-100 score | free: 0-100 SERP heuristic estimate with label]
    - Why it matters: [brief rationale]
-2. **[Topic/Keyword]** — covered by [competitors], [volume], [difficulty]
+2. **[Topic/Keyword]** — covered by [competitors]
+   - Volume: [enhanced: exact monthly number | free: High/Medium/Low with evidence]
+   - Difficulty: [enhanced: 0-100 SERP heuristic estimate with label | free: 0-100 estimate with label]
    - Why it matters: [brief rationale]
+
+**Volume and difficulty are required for every content gap, in both modes.** In free mode, run the SERP heuristic (search for the keyword, analyze domain types, content quality, SERP features, result count) and validate traffic existence via autocomplete/result checks.
 
 ### Competitor Weaknesses to Exploit
 1. **[Topic]** — [Competitor]'s content is [thin/outdated/off-target]

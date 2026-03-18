@@ -1,7 +1,10 @@
 ---
 name: search-gap
 description: >
-  This skill should be used when the user asks to audit website SEO,
+  Quick SEO health check for your website — crawls your pages, runs 21 checks
+  across Technical SEO, E-E-A-T, and Content Depth, then gives you a letter-graded
+  scorecard with prioritized fixes and source citations.
+  Use when the user asks to audit website SEO,
   run an SEO audit, check SEO health, grade a website for search,
   analyze on-page SEO, find SEO issues, check E-E-A-T signals,
   review technical SEO, or mentions "21-check SEO audit", "SEO scorecard",
@@ -65,9 +68,11 @@ For each of the top 3 semantic competitors:
 ### Section 3: Content Pillar Recommendations
 For each of 3-5 recommended pillars:
 - Pillar title and description
-- Relevance / Difficulty / Volume scores (High/Med/Low)
-- Opportunity score (Goldilocks formula)
-- 3-5 specific article topics with target intent and format
+- **Difficulty estimate**: Run the SERP heuristic from `reference/shared-procedures.md` — score 0-100 with qualitative label (Very Easy / Easy / Medium / Hard / Very Hard). Show the breakdown: domain type score + content quality score + SERP feature score + result count score = total.
+- **Volume indicator**: High / Medium / Low, with evidence (e.g., "Medium — appears in Google Autocomplete, 10 organic results, results from last 12 months")
+- **Relevance score**: High / Medium / Low based on positioning alignment
+- Opportunity score (Goldilocks formula: high relevance + low difficulty + meaningful volume)
+- 3-5 specific article topics with target intent, format, and estimated difficulty
 
 ## Sources
 

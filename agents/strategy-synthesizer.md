@@ -142,14 +142,18 @@ For the highest-priority posts (sorted by score desc, difficulty asc), generate 
 1. **SEO Title**: Include target keyword naturally, optimized for CTR (under 60 chars)
 2. **Meta Description**: 150-160 chars, includes keyword, ends with value prop
 3. **Target Keyword + Secondary Keywords**: 2-4 related terms
-4. **Revenue-Proximity Score**: 1-5 with one-line rationale
-5. **Content Format**: SERP-matched
-6. **Content Outline**: H2/H3 structure with key points per section
-7. **Target Word Count**: Based on competing content length
-8. **Internal Links**: Map connections to other posts and pillar pages
-9. **CTA Recommendation**: Appropriate for funnel position
-10. **E-E-A-T Signals**: Tailored to content type (from `references/eeat-guidelines.md`)
-11. **Schema Markup**: Recommended types (from `references/schema-markup-patterns.md`)
+4. **Search Volume**: Monthly search volume (enhanced mode: exact number; free mode: relative demand — High/Medium/Low — based on autocomplete presence, SERP saturation, and related search signals)
+5. **Keyword Difficulty**: Difficulty score (enhanced mode: 0-100 measured; free mode: 0-100 estimated via SERP heuristic with qualitative label — Very Easy/Easy/Medium/Hard/Very Hard)
+6. **Revenue-Proximity Score**: 1-5 with one-line rationale
+7. **Content Format**: SERP-matched
+8. **Content Outline**: H2/H3 structure with key points per section
+9. **Target Word Count**: Based on competing content length
+10. **Internal Links**: Map connections to other posts and pillar pages
+11. **CTA Recommendation**: Appropriate for funnel position
+12. **E-E-A-T Signals**: Tailored to content type (from `references/eeat-guidelines.md`)
+13. **Schema Markup**: Recommended types (from `references/schema-markup-patterns.md`)
+
+**Volume and difficulty are required in both modes.** In free mode, run the SERP heuristic from `references/difficulty-heuristics.md` for each keyword and show the estimated score with its label (e.g., "~22 (Easy)"). For volume, show relative demand (e.g., "Medium — appears in autocomplete, 10 organic results, fresh content ranking").
 
 ### Phase 7: Publishing Roadmap
 
@@ -160,6 +164,14 @@ Organize all 100+ post ideas into phases:
 - **Phase 4: Full Coverage** — Score 1-2, domain authority plays
 
 Within each phase, sort by: score (desc) > difficulty (asc) > volume (desc).
+
+Each phase table uses these columns:
+
+| Priority | Post | Pillar | Rev. Score | Difficulty | Volume | Funnel |
+|----------|------|--------|-----------|------------|--------|--------|
+
+- **Enhanced mode**: Difficulty = exact score (e.g., "12"), Volume = exact monthly number (e.g., "720/mo")
+- **Free mode**: Difficulty = heuristic estimate with label (e.g., "~22 (Easy)"), Volume = relative demand (e.g., "Medium")
 
 Recommend publishing cadence based on detected stage (Seed: 1-2/mo, Growth: 2-4/mo, Scale: 4-8/mo) and calculate time to complete each phase and the full backlog.
 
@@ -188,7 +200,7 @@ Return a brief summary to the conversation:
 
 1. **100+ post ideas across 5-8 pillars is mandatory.** Systematically cover the full topic landscape. If you have fewer than 100 ideas, expand by adding more angles, use cases, comparisons, and verticals per pillar.
 
-2. **Every keyword must have validation.** In enhanced mode: real volume and difficulty. In free mode: SERP heuristic score and traffic existence check. Never recommend a keyword without evidence it has search demand.
+2. **Every keyword must have volume and difficulty data.** In enhanced mode: real volume and difficulty from DataForSEO. In free mode: SERP heuristic difficulty estimate (0-100 with label) and relative volume (High/Medium/Low with evidence). Never recommend a keyword without evidence it has search demand. Never omit these fields — they are required in every content brief, topic map entry, and publishing roadmap table regardless of mode.
 
 3. **Positioning filter is the only hard gate.** If a keyword fails the positioning filter, it's out. But no keyword is ever filtered by stage or revenue-proximity score — all scores 1-5 are included.
 

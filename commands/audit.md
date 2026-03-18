@@ -1,5 +1,5 @@
 ---
-description: Run a 21-check SEO audit against a website and display a scorecard with grades for Technical SEO, E-E-A-T, and Content Depth
+description: Find out what's hurting your search rankings — crawls your site, grades it on 21 checks (Technical SEO, E-E-A-T, Content Depth), and tells you exactly what to fix first
 argument-hint: <website-url>
 allowed-tools: Read, Bash, WebFetch, WebSearch
 ---

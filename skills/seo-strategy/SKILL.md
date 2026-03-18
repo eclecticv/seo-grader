@@ -1,6 +1,6 @@
 ---
 name: seo-strategy
-description: Three-layer SEO methodology for startup content strategies. Generates 100+ post ideas across 5-8 pillars. Use when the user asks to "build an SEO strategy", "create a content plan for my startup", "what content should I write to rank on Google", "analyze competitors' SEO", "generate content briefs", "plan blog content", "keyword research for my website", or mentions "SEO for startups", "content pillars", "pillar topics", "revenue-proximity scoring", "positioning-led SEO".
+description: Complete SEO content strategy from a single URL — analyzes your site and competitors, then generates 100+ post ideas across 5-8 pillars with keyword metrics, production-ready briefs for the top 10-15, and a phased publishing roadmap. Use when the user asks to "build an SEO strategy", "create a content plan for my startup", "what content should I write to rank on Google", "analyze competitors' SEO", "generate content briefs", "plan blog content", "keyword research for my website", or mentions "SEO for startups", "content pillars", "pillar topics", "revenue-proximity scoring", "positioning-led SEO".
 version: 0.1.0
 ---
 
@@ -35,20 +35,22 @@ Generate a strategy in three sequential steps:
 
 ## Dual Mode Operation
 
-The skill operates in two modes based on whether DataForSEO credentials are configured:
+The skill operates in two modes based on whether DataForSEO credentials are configured. **Both modes produce keyword metrics in every content brief and the publishing order table.** The `plan` and `export` commands prompt the user to set up DataForSEO when credentials are not found.
 
 ### Enhanced Mode (DataForSEO)
 When `dataforseo_login` and `dataforseo_password` are set in `.claude/seo-grader.local.md`:
-- Real search volume data from Google
-- Precise keyword difficulty scores (0-100)
+- Real search volume data from Google (exact monthly numbers)
+- Precise keyword difficulty scores (0-100, measured)
 - Competitor keyword profiles with traffic estimates
 - Search intent classification (informational/commercial/transactional)
+- 12-month trend data for spotting rising and declining keywords
 
 See `references/dataforseo-api.md` for endpoint reference and request/response formats.
 
 ### Free Mode (Heuristic)
 When no API credentials are configured:
-- SERP composition analysis via WebSearch for difficulty estimation
+- Keyword difficulty estimated via SERP composition heuristic (0-100 score with qualitative label: Very Easy / Easy / Medium / Hard / Very Hard)
+- Search volume indicated as relative demand (High / Medium / Low) with evidence from Google Autocomplete, result count, and content freshness
 - Google Autocomplete for keyword expansion and traffic validation
 - Competitor content scraping via WebFetch
 - Explicit disclaimer in output about estimate precision

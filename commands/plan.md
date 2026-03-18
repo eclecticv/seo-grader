@@ -1,5 +1,5 @@
 ---
-description: Generate a positioning-led SEO content strategy for a startup website
+description: Get a complete content strategy for your startup — 100+ post ideas across 5-8 pillars, with keyword metrics and production-ready briefs you can hand to a writer. Analyzes competitors, filters by positioning, scores by revenue proximity. Prompts for optional DataForSEO key for precise metrics.
 argument-hint: <website-url>
 allowed-tools: Read, Write, Agent, WebFetch, WebSearch
 ---
@@ -14,7 +14,20 @@ Generate a comprehensive SEO content strategy for the website at $ARGUMENTS usin
    - `industry`, `audience` — optional context to improve research
    - `stage_override` — if set, skip auto-detection and use this stage (affects cadence, not filtering)
 
-2. Load the SEO strategy methodology from the seo-strategy skill. This provides the three-layer framework, scoring rubrics, and content brief templates.
+2. **If DataForSEO credentials are NOT configured**, prompt the user before proceeding:
+
+   Tell the user:
+   > This strategy will run in **free mode** — keyword difficulty is estimated from SERP heuristics and search volume is shown as relative demand (High/Medium/Low) rather than exact numbers. Results are useful but approximate.
+   >
+   > For precise search volume, measured keyword difficulty (0-100), competitor traffic estimates, and search intent classification, you can add a [DataForSEO](https://dataforseo.com) API key.
+
+   Then ask:
+   - **"Continue in free mode"** — proceed without API credentials
+   - **"Set up DataForSEO first"** — guide the user to create `.claude/seo-grader.local.md` with their credentials, then re-read settings and proceed in enhanced mode
+
+   If the user chooses to set up DataForSEO, create `.claude/seo-grader.local.md` with the template from the README and ask them to fill in `dataforseo_login` and `dataforseo_password`. After they confirm, re-read the file and proceed in enhanced mode.
+
+3. Load the SEO strategy methodology from the seo-strategy skill. This provides the three-layer framework, scoring rubrics, and content brief templates.
 
 ## Execution
 
