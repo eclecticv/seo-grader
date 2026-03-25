@@ -1,6 +1,6 @@
 {
   "name": "seo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "SEO in a Box. One command, full strategy. Point it at your website — get a 21-check site audit, competitive analysis, and 100+ post ideas across 5-8 pillars with production-ready briefs you can hand to a writer. Rejects keywords that dilute your positioning, scores every idea by distance from revenue, and builds a phased publishing roadmap. Works out of the box; prompts for optional DataForSEO API key for precise keyword metrics.",
   "author": {
     "name": "And/or Labs",
